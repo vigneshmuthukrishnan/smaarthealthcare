@@ -21,7 +21,6 @@ import {
   Sparkles,
   Stethoscope,
   TestTube2,
-  UserRound,
   Waves,
   X,
 } from 'lucide-react';
@@ -50,67 +49,67 @@ const services = [
     title: 'Physiotherapy',
     text: 'Back & Neck Pain, Sciatica, Slip Disc, Arthritis, Frozen Shoulder, Knee Pain, Sports Injuries, Muscle & Joint Pain, Post-Surgical Rehabilitation, Stroke Rehabilitation, Parkinson\'s Rehabilitation, Balance & Vestibular Rehabilitation, Pediatric Physiotherapy, Geriatric Physiotherapy, Women\'s Health Physiotherapy.',
     icon: Activity,
-    image: images.physiotherapy,
+    image: '/images/service-physiotherapy.jpg',
   },
   {
     title: 'Pain Management',
     text: 'Personalized treatment plans for acute and chronic pain using modern rehabilitation techniques.',
     icon: HeartPulse,
-    image: images.pain,
+    image: '/images/service-pain-management.jpg',
   },
   {
     title: 'Chiropractic & Joint Mobilization',
     text: 'Safe manual therapy to restore spinal alignment, improve mobility, and reduce pain.',
     icon: Bone,
-    image: images.rehabilitation,
+    image: '/images/service-chiropractic.jpg',
   },
   {
     title: 'Acupuncture',
     text: 'Drug-free pain relief using evidence-based acupuncture techniques.',
     icon: Sparkles,
-    image: images.pain,
+    image: '/images/service-acupuncture.jpg',
   },
   {
     title: 'Varma Therapy',
     text: 'Traditional therapeutic methods for pain relief and improved circulation.',
     icon: Waves,
-    image: images.rehabilitation,
+    image: '/images/service-varma.jpg',
   },
   {
     title: 'Ayurveda & Panchakarma',
     text: 'Holistic therapies that support healing, detoxification, and long-term wellness.',
     icon: ShieldCheck,
-    image: images.about,
+    image: '/images/service-ayurveda.jpg',
   },
   {
     title: 'Rehabilitation Programs',
     text: 'Stroke Rehabilitation, Sports Rehabilitation, Orthopedic Rehabilitation, Neurological Rehabilitation, Geriatric Rehabilitation, Post-Fracture Rehabilitation.',
     icon: Brain,
-    image: images.rehabilitation,
+    image: '/images/service-rehabilitation.jpg',
   },
   {
     title: 'Yoga & Strength Training',
     text: 'Customized movement programs for flexibility, posture, strength, and injury prevention.',
     icon: Dumbbell,
-    image: images.physiotherapy,
+    image: '/images/service-yoga-strength.jpg',
   },
   {
     title: 'Pharmacy',
     text: 'Quality medicines available at affordable prices.',
     icon: Pill,
-    image: images.diagnostics,
+    image: '/images/service-pharmacy.jpg',
   },
   {
     title: 'Laboratory Services',
     text: 'Routine laboratory investigations with reliable reporting.',
     icon: TestTube2,
-    image: images.diagnostics,
+    image: '/images/service-laboratory.jpg',
   },
   {
     title: 'Digital X-Ray',
     text: 'Quick, accurate, and affordable diagnostic imaging.',
     icon: Microscope,
-    image: images.diagnostics,
+    image: '/images/service-digital-xray.jpg',
   },
 ];
 
@@ -223,6 +222,19 @@ const faqs = [
   ['Do you treat elderly patients?', 'Yes. We offer specialized geriatric rehabilitation.'],
 ];
 
+const doctorExpertise = [
+  'Neuromuscular & Myofascial Manual Therapy',
+  'Sports Injury Rehabilitation',
+  'Musculoskeletal Rehabilitation',
+  'Pain Management',
+  'Functional Rehabilitation',
+  'Sujok Therapy',
+  'Movement & Mobility Rehabilitation',
+  'Post-Injury Recovery',
+  'Strength & Conditioning',
+  'Personalized Rehabilitation Programs',
+];
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -232,9 +244,11 @@ function App() {
       <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur">
         <div className="section-shell flex h-20 items-center justify-between gap-4">
           <a href="#home" className="focus-ring flex items-center gap-3 rounded-md">
-            <span className="grid h-12 w-12 place-items-center rounded-md bg-clinic-teal text-lg font-black text-white">
-              SH
-            </span>
+            <img
+              src="/images/smart-health-care-logo.png"
+              alt="SMAART HEALTH CARE logo"
+              className="h-14 w-14 rounded-md object-contain"
+            />
             <span>
               <span className="block font-display text-lg font-extrabold leading-tight text-clinic-navy">
                 SMAART HEALTH CARE
@@ -770,28 +784,61 @@ function Doctor() {
   return (
     <section id="doctor" className="bg-white py-20">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="rounded-md bg-clinic-mint p-8">
-          <div className="grid h-28 w-28 place-items-center rounded-md bg-white text-clinic-teal shadow-soft">
-            <UserRound className="h-14 w-14" />
+        <div className="overflow-hidden rounded-md bg-clinic-mint shadow-sm">
+          <img
+            src="/images/docter.jpeg"
+            alt="Dr. J. Ilavarasan"
+            className="h-[420px] w-full object-cover object-top"
+          />
+          <div className="p-8">
+            <h2 className="font-display text-3xl font-extrabold text-clinic-navy">
+              Dr. J. ILAVARASAN, BPT, MD (AM), S. ACUP., MIAP
+            </h2>
+            <p className="mt-3 font-bold text-clinic-teal">Founder & Lead Rehabilitation Therapist</p>
+            <p className="mt-2 font-semibold text-slate-700">SMAART HEALTH CARE</p>
+            <p className="mt-3 leading-7 text-slate-700">
+              Neuromuscular & Myofascial Manual Therapist | Sujok Therapist
+            </p>
           </div>
-          <h2 className="mt-6 font-display text-3xl font-extrabold text-clinic-navy">
-            Dr. J. Ilavarasan, BPT, MD (AM)
-          </h2>
-          <p className="mt-2 font-bold text-clinic-teal">Chief Physiotherapist</p>
         </div>
         <div>
           <p className="eyebrow">Meet Our Chief Physiotherapist</p>
           <h3 className="mt-3 font-display text-4xl font-extrabold leading-tight text-clinic-navy">
-            Patient-first rehabilitation for long-term recovery.
+            Founder & Lead Rehabilitation Therapist
           </h3>
           <p className="mt-6 text-lg leading-8 text-slate-700">
-            Dr. J. Ilavarasan is dedicated to helping patients recover from pain and regain mobility through evidence-based physiotherapy. His patient-first approach focuses on identifying the root cause of each condition and designing personalized rehabilitation programs that promote long-term recovery. He is experienced in treating musculoskeletal disorders, sports injuries, neurological conditions, post-operative rehabilitation, arthritis, sciatica, diabetic neuropathy, and chronic pain.
+            Dr. J. Ilavarasan is an experienced rehabilitation professional with more than 16 years of clinical experience in the fields of sports medicine, physical rehabilitation, pain management, and functional recovery.
           </p>
-          <div className="mt-8 rounded-md border-l-4 border-clinic-coral bg-[#FFF6F3] p-6">
-            <h4 className="font-display text-xl font-extrabold text-clinic-navy">Success Story</h4>
-            <p className="mt-3 leading-8 text-slate-700">
-              Over the years, Dr. J. Ilavarasan has helped numerous patients regain mobility and return to active, independent lives. Many individuals who struggled with chronic back pain, frozen shoulder, sports injuries, stroke-related disabilities, and post-surgical limitations have experienced significant improvement through his personalized treatment approach. His commitment to compassionate care and continuous learning has earned the trust of patients and families throughout the region.
-            </p>
+          <p className="mt-5 text-lg leading-8 text-slate-700">
+            Over the course of his professional journey, he has worked with patients across various institutes and clinical settings, providing individualized rehabilitation care for a wide range of musculoskeletal and neuromuscular conditions.
+          </p>
+          <p className="mt-5 text-lg leading-8 text-slate-700">
+            With extensive hands-on clinical experience, Dr. Ilavarasan has treated more than 20,000 patients, helping individuals improve movement, reduce pain, restore function, and return to their daily activities with greater confidence.
+          </p>
+          <div className="mt-8 rounded-md bg-[#F8FBFB] p-6">
+            <h4 className="font-display text-xl font-extrabold text-clinic-navy">Areas of Expertise</h4>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {doctorExpertise.map((item) => (
+                <div key={item} className="flex gap-3 rounded-md bg-white p-3 shadow-sm">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-clinic-teal" />
+                  <span className="font-semibold text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            <div className="rounded-md border-l-4 border-clinic-coral bg-[#FFF6F3] p-6">
+              <h4 className="font-display text-xl font-extrabold text-clinic-navy">Our Approach</h4>
+              <p className="mt-3 leading-8 text-slate-700">
+                At SMAART HEALTH CARE, Dr. Ilavarasan focuses on understanding the individual rather than treating only the symptoms. His approach combines clinical assessment, hands-on therapy, rehabilitation exercises, functional training, and individualized care plans according to each patient's needs.
+              </p>
+            </div>
+            <div className="rounded-md border-l-4 border-clinic-teal bg-clinic-mint p-6">
+              <h4 className="font-display text-xl font-extrabold text-clinic-navy">His Vision</h4>
+              <p className="mt-3 leading-8 text-slate-700">
+                To provide accessible, evidence-informed, personalized rehabilitation care under one roof, helping every individual move better, live better, and stay healthy.
+              </p>
+            </div>
           </div>
         </div>
       </div>
