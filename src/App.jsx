@@ -930,6 +930,38 @@ function Faq() {
 }
 
 function Appointment() {
+  const [appointmentStatus, setAppointmentStatus] = useState('');
+
+  const handleAppointmentSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get('name')?.toString().trim();
+    const center = formData.get('center')?.toString().trim();
+    const phone = formData.get('phone')?.toString().trim();
+
+    if (!name || !phone) {
+      setAppointmentStatus('Please enter your name and phone number.');
+      return;
+    }
+
+    try {
+      await fetch('https://mydreamstechnology.in/api-mail/mailapi.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          center,
+          phone,
+        }),
+      });
+      form.reset();
+      setAppointmentStatus('Appointment request sent successfully.');
+    } catch {
+      setAppointmentStatus('Unable to send now. Please call or WhatsApp 74491 44440.');
+    }
+  };
+
   return (
     <section id="appointment" className="bg-[#EAF7FC] py-16 sm:py-20">
       <div className="section-shell">
@@ -937,23 +969,18 @@ function Appointment() {
           <h3 className="font-display text-3xl font-extrabold text-[#2B3037]">Book an Appointment</h3>
           <form
             className="mt-6 grid gap-4"
-            action="https://formsubmit.co/smaarthealthcarecentre@gmail.com"
-            method="POST"
+            onSubmit={handleAppointmentSubmit}
           >
-            <input type="hidden" name="_subject" value="New Appointment Request - SMAART HEALTH CARE" />
-            <input type="hidden" name="_cc" value="smaarthealthcare@gmail.com" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
             <input
               type="text"
-              name="Name"
+              name="name"
               placeholder="Enter Name"
               required
               className="focus-ring h-14 w-full rounded-none border border-slate-300 px-4 text-slate-700 placeholder:text-slate-400"
             />
             <label className="relative block">
               <select
-                name="Preferred Branch"
+                name="center"
                 defaultValue="Tiruvannamalai Main Center"
                 className="focus-ring h-14 w-full appearance-none rounded-none border border-slate-300 bg-white px-4 pr-11 text-slate-700"
               >
@@ -966,7 +993,7 @@ function Appointment() {
             </label>
             <input
               type="tel"
-              name="Phone Number"
+              name="phone"
               placeholder="Enter Phone Number"
               required
               className="focus-ring h-14 w-full rounded-none border border-slate-300 px-4 text-slate-700 placeholder:text-slate-400"
@@ -977,6 +1004,11 @@ function Appointment() {
             >
               Submit
             </button>
+            {appointmentStatus && (
+              <p className="text-sm font-semibold text-clinic-teal" role="status">
+                {appointmentStatus}
+              </p>
+            )}
           </form>
         </div>
       </div>
