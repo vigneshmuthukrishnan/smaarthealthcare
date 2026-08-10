@@ -7,6 +7,7 @@ import {
   Brain,
   CalendarCheck,
   CheckCircle2,
+  ChevronDown,
   Dumbbell,
   Facebook,
   HeartPulse,
@@ -243,18 +244,18 @@ function App() {
       <TopBar />
       <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/95 backdrop-blur">
         <div className="section-shell flex h-20 items-center justify-between gap-4">
-          <a href="#home" className="focus-ring flex items-center gap-3 rounded-md">
+          <a href="#home" className="focus-ring flex items-center gap-2 rounded-md">
             <img
-              src="/images/smart-health-care-logo.png"
+              src="/images/new-logo.png"
               alt="SMAART HEALTH CARE logo"
-              className="h-14 w-14 rounded-md object-contain"
+              className="h-16 w-16 object-contain"
             />
-            <span>
-              <span className="block font-display text-lg font-extrabold leading-tight text-clinic-navy">
-                SMAART HEALTH CARE
+            <span className="font-display text-lg font-extrabold leading-[1.05] text-clinic-navy sm:text-xl">
+              <span className="block">
+                SMAART
               </span>
-              <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-clinic-teal">
-                Move Better. Live Better.
+              <span className="block">
+                HEALTH CARE
               </span>
             </span>
           </a>
@@ -784,21 +785,39 @@ function Doctor() {
   return (
     <section id="doctor" className="bg-white py-20">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="overflow-hidden rounded-md bg-clinic-mint shadow-sm">
-          <img
-            src="/images/docter.jpeg"
-            alt="Dr. J. Ilavarasan"
-            className="h-[420px] w-full object-cover object-top"
-          />
-          <div className="p-8">
-            <h2 className="font-display text-3xl font-extrabold text-clinic-navy">
-              Dr. J. ILAVARASAN, BPT, MD (AM), S. ACUP., MIAP
-            </h2>
-            <p className="mt-3 font-bold text-clinic-teal">Founder & Lead Rehabilitation Therapist</p>
-            <p className="mt-2 font-semibold text-slate-700">SMAART HEALTH CARE</p>
-            <p className="mt-3 leading-7 text-slate-700">
-              Neuromuscular & Myofascial Manual Therapist | Sujok Therapist
-            </p>
+        <div className="grid gap-6">
+          <div className="overflow-hidden rounded-md bg-clinic-mint shadow-sm">
+            <img
+              src="/images/docter.jpeg"
+              alt="Dr. J. Ilavarasan"
+              className="h-[460px] w-full object-cover object-top"
+            />
+            <div className="p-8">
+              <h2 className="font-display text-3xl font-extrabold text-clinic-navy">
+                Dr. J. ILAVARASAN, BPT, MD (AM), S. ACUP., MIAP
+              </h2>
+              <p className="mt-3 font-bold text-clinic-teal">Founder & Lead Rehabilitation Therapist</p>
+              <p className="mt-2 font-semibold text-slate-700">SMAART HEALTH CARE</p>
+              <p className="mt-3 leading-7 text-slate-700">
+                Neuromuscular & Myofascial Manual Therapist | Sujok Therapist
+              </p>
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-md bg-[#FFF7EA] shadow-sm">
+            <img
+              src="/images/OurLeadership.jpeg"
+              alt="Mrs. Bessilya Divya"
+              className="h-[600px] w-full object-cover object-top"
+            />
+            <div className="p-8">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-clinic-teal">Our Leadership</p>
+              <h2 className="mt-3 font-display text-3xl font-extrabold text-clinic-navy">
+                Mrs.Bessilya Divya, M.A., B.Ed.
+              </h2>
+              <p className="mt-3 font-bold text-clinic-coral">
+                Administrative & Special Education Professional
+              </p>
+            </div>
           </div>
         </div>
         <div>
@@ -839,6 +858,24 @@ function Doctor() {
                 To provide accessible, evidence-informed, personalized rehabilitation care under one roof, helping every individual move better, live better, and stay healthy.
               </p>
             </div>
+          </div>
+          <div className="mt-8 rounded-md bg-[#F8FBFB] p-6">
+            <p className="eyebrow">Our Leadership</p>
+            <h4 className="mt-3 font-display text-2xl font-extrabold text-clinic-navy">
+              Mrs.Bessilya Divya, M.A., B.Ed.
+            </h4>
+            <p className="mt-2 font-bold text-clinic-teal">
+              Administrative & Special Education Professional
+            </p>
+            <p className="mt-5 leading-8 text-slate-700">
+              Bessilya Divya brings valuable experience in special education, administration, and patient support to SMAART HEALTH CARE. She oversees administrative coordination and contributes to creating a compassionate, organized, and patient-friendly environment.
+            </p>
+            <p className="mt-5 leading-8 text-slate-700">
+              Her experience in special education strengthens our commitment to holistic, family-centred rehabilitation and healthcare, ensuring that every patient and family receives caring guidance and support.
+            </p>
+            <p className="mt-5 font-bold leading-8 text-clinic-navy">
+              Together, our leadership team is committed to delivering holistic rehabilitation and healthcare under one roof.
+            </p>
           </div>
         </div>
       </div>
@@ -894,35 +931,53 @@ function Faq() {
 
 function Appointment() {
   return (
-    <section id="appointment" className="bg-[#FFF7EA] py-20">
-      <div className="section-shell grid items-center gap-10 lg:grid-cols-[1fr_0.85fr]">
-        <div>
-          <p className="eyebrow">Book Your Appointment Today</p>
-          <h2 className="mt-3 font-display text-4xl font-extrabold leading-tight text-clinic-navy sm:text-5xl">
-            Pain should never stop you from living your best life.
-          </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-700">
-            Whether you're recovering from an injury, managing chronic pain, or looking to improve your health
-            and mobility, our team is here to help.
-          </p>
-          <p className="mt-5 text-xl font-extrabold text-clinic-navy">SMAART HEALTH CARE</p>
-          <p className="mt-2 text-lg font-bold text-clinic-teal">Move Better. Live Better. Stay Healthy.</p>
-        </div>
-        <div className="rounded-md bg-white p-6 shadow-soft">
-          <a
-            href="https://wa.me/917449144440"
-            className="focus-ring flex items-center justify-center gap-3 rounded-md bg-clinic-teal px-6 py-4 text-center font-bold text-white transition hover:bg-[#0b7d76]"
+    <section id="appointment" className="bg-[#EAF7FC] py-16 sm:py-20">
+      <div className="section-shell">
+        <div className="mx-auto max-w-4xl rounded-md bg-white p-6 shadow-soft sm:p-8">
+          <h3 className="font-display text-3xl font-extrabold text-[#2B3037]">Book an Appointment</h3>
+          <form
+            className="mt-6 grid gap-4"
+            action="https://formsubmit.co/smaarthealthcarecentre@gmail.com"
+            method="POST"
           >
-            <Phone className="h-5 w-5" />
-            WhatsApp 74491 44440
-          </a>
-          <a
-            href="mailto:smaarthealthcarecentre@gmail.com"
-            className="focus-ring mt-4 flex items-center justify-center gap-3 rounded-md border border-clinic-teal px-6 py-4 text-center font-bold text-clinic-teal transition hover:bg-clinic-mint"
-          >
-            <Mail className="h-5 w-5" />
-            Send Email
-          </a>
+            <input type="hidden" name="_subject" value="New Appointment Request - SMAART HEALTH CARE" />
+            <input type="hidden" name="_cc" value="smaarthealthcare@gmail.com" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="text"
+              name="Name"
+              placeholder="Enter Name"
+              required
+              className="focus-ring h-14 w-full rounded-none border border-slate-300 px-4 text-slate-700 placeholder:text-slate-400"
+            />
+            <label className="relative block">
+              <select
+                name="Preferred Branch"
+                defaultValue="Tiruvannamalai Main Center"
+                className="focus-ring h-14 w-full appearance-none rounded-none border border-slate-300 bg-white px-4 pr-11 text-slate-700"
+              >
+                <option>Tiruvannamalai Main Center</option>
+                <option>Branch1 - Big street near Gandhi statue</option>
+                <option>Branch2 - Devarchikanahalli, Bengaluru</option>
+                <option>Online Consultation</option>
+              </select>
+              <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500" />
+            </label>
+            <input
+              type="tel"
+              name="Phone Number"
+              placeholder="Enter Phone Number"
+              required
+              className="focus-ring h-14 w-full rounded-none border border-slate-300 px-4 text-slate-700 placeholder:text-slate-400"
+            />
+            <button
+              type="submit"
+              className="focus-ring mt-5 h-14 rounded-none bg-clinic-amber font-bold text-clinic-navy transition hover:bg-[#e8ab31]"
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </div>
     </section>
@@ -957,16 +1012,16 @@ function Contact() {
         <div className="mt-8 grid gap-4 rounded-md bg-white p-6 shadow-sm md:grid-cols-3">
           <ContactLine icon={Phone} label="Phone / WhatsApp" value="74491 44440" href="tel:+917449144440" />
           <ContactLine icon={Phone} label="Whatsapp" value="7449144440" href="https://wa.me/917449144440" />
-          <ContactLine icon={Mail} label="Email" value="smaarthealthcare@gmail.com" href="mailto:smaarthealthcare@gmail.com" />
+          {/* <ContactLine icon={Mail} label="Email" value="smaarthealthcare@gmail.com" href="mailto:smaarthealthcare@gmail.com" /> */}
           <ContactLine icon={Mail} label="Email" value="smaarthealthcarecentre@gmail.com" href="mailto:smaarthealthcarecentre@gmail.com" />
-          <ContactLine icon={Instagram} label="fb and instagram" value="smaarthealthcare" href="https://instagram.com/smaarthealthcare" />
+          {/* <ContactLine icon={Instagram} label="fb and instagram" value="smaarthealthcare" href="https://instagram.com/smaarthealthcare" />
           <ContactLine icon={MapPin} label="Website" value="smaarthealthcare.in" href="https://smaarthealthcare.in" />
           <ContactLine
             icon={MapPin}
             label="SMAART HEALTH CARE Tiruvannamalai"
             value="https://share.google/qMJC0xaXesS3Xg64D"
             href="https://share.google/qMJC0xaXesS3Xg64D"
-          />
+          /> */}
         </div>
       </div>
     </section>
