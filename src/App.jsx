@@ -810,15 +810,21 @@ function Doctor() {
               alt="Dr. J. Ilavarasan"
               className="h-[460px] w-full object-cover object-top"
             />
+
             <div className="p-8">
               <h2 className="font-display text-3xl font-extrabold text-clinic-navy">
                 Dr. J. ILAVARASAN, BPT, MD (AM), S. ACUP., MIAP
               </h2>
               <p className="mt-3 font-bold text-clinic-teal">Founder & Lead Rehabilitation Therapist</p>
-              <p className="mt-2 font-semibold text-slate-700">SMAART HEALTH CARE</p>
-              <p className="mt-3 leading-7 text-slate-700">
-                Neuromuscular & Myofascial Manual Therapist | Sujok Therapist
+              <p className="mt-2 mb-2 font-semibold text-slate-700">SMAART HEALTH CARE</p>
+              {/* <p className="mt-3 leading-7 text-slate-700">
+                Advanced Neuromuscular Physiotherapy & Rehabilitation centre
+              </p> */}
+            <div className="bg-clinic-navy px-1 py-3 text-center">
+              <p className="font-display text-lg font-extrabold text-clinic-amber sm:text-xl">
+                Advanced Neuromuscular Physiotherapy & Rehabilitation centre
               </p>
+            </div>
               <div className="mt-6 border-t border-clinic-teal/20 pt-6">
                 <h3 className="font-display text-xl font-extrabold text-clinic-navy">Professional Experience</h3>
                 <div className="mt-4 grid gap-3">
