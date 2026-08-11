@@ -1022,6 +1022,25 @@ function Contact() {
     ['Branch1', '108/90, Big street near Gandhi statue Tiruvannamalai 606601.'],
     ['Branch2', 'opposite to stone Park, Devarchikanahalli, Bengaluru 560076'],
   ];
+  const mapLocations = [
+    {
+      title: 'Main Branch',
+      address:
+        '4, Sriram Nagar, Thaneerpanthal, Near Government School, Kilsirupakkam, Tiruvannamalai - 606604',
+      embed:
+        'https://maps.google.com/maps?q=12.1745642%2C78.9957648&t=k&z=15&ie=UTF8&iwloc=&output=embed',
+      link:
+        'https://www.google.com/maps/place/SMAART+HEALTHCARE/@12.1741568,78.9945097,399m/data=!3m1!1e3!4m6!3m5!1s0x3bac95be6c3e96fb:0xc60b29bb524d87f5!8m2!3d12.1745642!4d78.9957648!16s%2Fg%2F11nt_4b8rm?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D',
+    },
+    {
+      title: 'Branch1',
+      address: '108/90, Big street near Gandhi statue Tiruvannamalai 606601.',
+      embed:
+        'https://maps.google.com/maps?q=12.2338989%2C79.0695799&t=k&z=15&ie=UTF8&iwloc=&output=embed',
+      link:
+        'https://www.google.com/maps/place/SMAART+HEALTH+CARE+Tiruvannamalai/@12.2339718,79.0693836,82m/data=!3m1!1e3!4m6!3m5!1s0x3bacc1801616c883:0xb3dc4a29767f7030!8m2!3d12.2338989!4d79.0695799!16s%2Fg%2F11zh6pd4_7?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D',
+    },
+  ];
 
   return (
     <section id="contact" className="py-20">
@@ -1041,6 +1060,42 @@ function Contact() {
             </div>
           ))}
         </div>
+        <div className="mt-8">
+          <h3 className="font-display text-2xl font-extrabold text-clinic-navy">Location Map</h3>
+          <div className="mt-5 grid gap-6 lg:grid-cols-2">
+            {mapLocations.map((location) => (
+              <article key={location.title} className="overflow-hidden rounded-md bg-white shadow-sm">
+                <iframe
+                  title={`${location.title} map`}
+                  src={location.embed}
+                  className="h-72 w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <div className="p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="grid h-10 w-10 flex-none place-items-center rounded-md bg-clinic-mint text-clinic-teal">
+                      <MapPin className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <h4 className="font-display text-xl font-extrabold text-clinic-navy">{location.title}</h4>
+                      <p className="mt-2 leading-7 text-slate-600">{location.address}</p>
+                    </div>
+                  </div>
+                  <a
+                    href={location.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="focus-ring mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-clinic-teal px-4 py-3 text-sm font-bold text-white transition hover:bg-[#0b7d76]"
+                  >
+                    <MapPin className="h-4 w-4" />
+                    Open in Google Maps
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
         <div className="mt-8 grid gap-4 rounded-md bg-white p-6 shadow-sm md:grid-cols-3">
           <ContactLine icon={Phone} label="Phone / WhatsApp" value="74491 44440" href="tel:+917449144440" />
           <ContactLine icon={Phone} label="Whatsapp" value="7449144440" href="https://wa.me/917449144440" />
@@ -1054,6 +1109,38 @@ function Contact() {
             value="https://share.google/qMJC0xaXesS3Xg64D"
             href="https://share.google/qMJC0xaXesS3Xg64D"
           /> */}
+        </div>
+        <div className="mt-6 rounded-md bg-clinic-navy p-6 text-white shadow-soft">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h3 className="font-display text-2xl font-extrabold">Follow SMAART HEALTH CARE</h3>
+              <p className="mt-2 text-white/75">fb and instagram: smaarthealthcare</p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <a
+                href="https://facebook.com/smaarthealthcare"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring flex items-center gap-3 rounded-md bg-white px-5 py-4 font-bold text-clinic-navy transition hover:bg-clinic-mint"
+              >
+                <span className="grid h-11 w-11 place-items-center rounded-md bg-[#1877F2] text-white">
+                  <Facebook className="h-6 w-6" />
+                </span>
+                Facebook
+              </a>
+              <a
+                href="https://instagram.com/smaarthealthcare"
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring flex items-center gap-3 rounded-md bg-white px-5 py-4 font-bold text-clinic-navy transition hover:bg-clinic-mint"
+              >
+                <span className="grid h-11 w-11 place-items-center rounded-md bg-[#E4405F] text-white">
+                  <Instagram className="h-6 w-6" />
+                </span>
+                Instagram
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
