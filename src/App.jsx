@@ -236,6 +236,24 @@ const doctorExpertise = [
   'Personalized Rehabilitation Programs',
 ];
 
+const professionalExperience = [
+  'SPARC Institute',
+  'Portea Medicals',
+  'New Century Hospitals',
+  'Bliss Physiotherapy & Child Development Centre',
+  'Physiopulse rehab center',
+];
+
+const doctorCertifications = [
+  'Sujok Acupuncture',
+  'Myofascial Release Technique',
+  'X-Ray Findings',
+  'Electropathy',
+  'Taping',
+  'reflexology',
+  'Dry needling',
+];
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -801,13 +819,41 @@ function Doctor() {
               <p className="mt-3 leading-7 text-slate-700">
                 Neuromuscular & Myofascial Manual Therapist | Sujok Therapist
               </p>
+              <div className="mt-6 border-t border-clinic-teal/20 pt-6">
+                <h3 className="font-display text-xl font-extrabold text-clinic-navy">Professional Experience</h3>
+                <div className="mt-4 grid gap-3">
+                  {professionalExperience.map((item) => (
+                    <div key={item} className="flex gap-3 rounded-md bg-white/80 p-3 shadow-sm">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-clinic-teal" />
+                      <span className="font-semibold text-slate-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-6 border-t border-clinic-teal/20 pt-6">
+                <h3 className="font-display text-xl font-extrabold text-clinic-navy">Certifications</h3>
+                <div className="mt-4 grid gap-3">
+                  {doctorCertifications.map((item) => (
+                    <div key={item} className="flex gap-3 rounded-md bg-white/80 p-3 shadow-sm">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-clinic-teal" />
+                      <span className="font-semibold text-slate-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-6 rounded-md border-l-4 border-clinic-amber bg-white/80 p-5">
+                <h3 className="font-display text-xl font-extrabold text-clinic-navy">Award</h3>
+                <p className="mt-3 font-bold leading-7 text-clinic-navy">
+                  Golden Star Award from National integrity cultural academy
+                </p>
+              </div>
             </div>
           </div>
           <div className="overflow-hidden rounded-md bg-[#FFF7EA] shadow-sm">
             <img
               src="/images/OurLeadership.jpeg"
               alt="Mrs. Bessilya Divya"
-              className="h-[600px] w-full object-cover object-top"
+              className="h-[500px] w-full object-cover object-top"
             />
             <div className="p-8">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-clinic-teal">Our Leadership</p>
